@@ -29,8 +29,8 @@ exports.start = (entity, action, context) => {
     return builder
 }
 
-exports.create = (model, context) => {
-    return journalsApi.create(model, context)
+exports.create = async (model, context) => {
+    return journalsApi.create(model, null, context)
 }
 
 exports.search = async (query, context) => {
