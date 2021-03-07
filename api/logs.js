@@ -1,4 +1,4 @@
-const logsApi = require('../helpers/request-helper')('logs')
+const api = require('../helpers/request-helper')('logs')
 const config = require('config').get('providers')['insight']
 const client = new (require('node-rest-client-promise')).Client()
 
@@ -49,9 +49,9 @@ exports.create = async (model, context) => {
 }
 
 exports.search = async (query, context) => {
-    return logsApi.search(query, null, context)
+    return api.search(query, null, context)
 }
 
 exports.get = async (id, context) => {
-    return logsApi.get(id, null, context)
+    return api.get(id, null, context)
 }
